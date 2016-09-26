@@ -1,0 +1,27 @@
+Error Codes:
+
+Number:				Description:
+-------				------------
+
+ 10					input error in subroutine mat_inverse()
+ 					input Matrix is not square, cannot invert
+ 20					dimension error in subroutine convert_to_3D(), unknown dimensions or plane stress conditions
+ 21					dimension error in subroutine convert_to_plane_cond(), unknown dimensions or plane stress conditions
+ 30					allocation error in subroutine unpack_state_vars()	
+ 40					input error in the first two entries of of the state variables vector
+ 					(n_yf < 1 or n_int_vars < 0)
+
+-10					multi surface return mapping error in subroutine multisurface_return_mapping()
+					Maxium number of allowed newton iterations reached. Increment does not converge
+
+-20					multi surface check error in subroutine multisurface_stress_update()
+					No active yield function combination found, which fullfills the required conditions:
+					delta_lambda >= 0 and yf <= 0, error occurs in second single yield function loop, i.e no yield function 
+
+-30					no admissible active yield function pair found in yield function pair loop subroutine
+
+-40					no admissible active yield function pair found in first yf pair loop in multsurf check
+
+-100				LAPACK error while solving system of linear equations ( dgesv() )
+-200				LAPACK error in LU factorization ( dgetrf() )
+-300				LAPACK error in matrix invertion ( dgetri() )
